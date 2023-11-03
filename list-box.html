@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Box</title>
+</head>
+<body>
+    <ul id="ulList">
+        <li>Sayem</li>
+        <li>Akash</li>
+        <li>Tipu</li>
+    </ul>
+    
+    <input type="text" name="" id="addName">
+    <br>
+    <br>
+    <button id="btn-add">Add Name</button>
+
+    <script>
+        document.getElementById('btn-add').addEventListener('click', function(){
+            const addName = document.getElementById('addName');
+            const addValue = addName.value;
+
+            const newName = document.createElement('li');
+            newName.innerText = addValue;
+
+            const ul = document.getElementById('ulList');
+            ul.appendChild(newName);
+            addName.value = '';
+        })
+    </script>
+</body>
+</html>
