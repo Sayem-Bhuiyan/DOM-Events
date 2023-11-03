@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Summary Recap</title>
+</head>
+<body>
+    <h1 id="heading-text">Deafult Text</h1>
+    <button id="btn-1">Button-1</button>
+    <button id="btn-2">Button-2</button>
+
+    <br>
+    <br>
+    <br>
+    <!-- input -->
+    <p id="text-default">Input a valid String</p>
+    <input id="input-box" type="text">
+    <button id="btn-submit">Submit</button>
+
+    <script>
+        document.getElementById('btn-1').addEventListener('click', function(){
+            const heading = document.getElementById('heading-text');
+            heading.innerText = 'Text changed by Btn - 01';
+        })
+        
+        document.getElementById('btn-2').addEventListener('click', function(){
+            const heading = document.getElementById('heading-text');
+            heading.innerText = 'Text changed by Btn - 02';
+        })
+
+        // input field scripting
+        document.getElementById('btn-submit').addEventListener('click', function(){
+            const inputText = document.getElementById('input-box');
+            inputValue = inputText.value;
+            
+            const textStore = document.getElementById('text-default')
+            textStore.innerText = inputValue;
+            inputText.value = '';
+        })
+    </script>
+</body>
+</html>
